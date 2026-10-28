@@ -1,5 +1,7 @@
 # ProjetoFinal
 Integrantes:
-Carlos Vinícius da Silva
-Débora Sofia da Silva Luiz
-José Felipe de Lima Ferreira
+<ul>
+  <i>Carlos Vinícius da Silva</i>
+  <i>Débora Sofia da Silva Luiz</i>
+  <i>José Felipe de Lima Ferreira</i>
+</ul>
