@@ -6,3 +6,4 @@ Integrantes:
 
 # QUADRO DE TAREFAS
 - Carlos Vinícius: Modelo Conceitual
+- Débora Sofia: Diagrama
