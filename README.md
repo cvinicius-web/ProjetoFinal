@@ -5,12 +5,18 @@ Integrantes:
 - José Felipe de Lima Ferreira
 
 # QUADRO DE TAREFAS
-M2(10/11): 
+M1(10/11): 
 - Carlos Vinícius: Modelo Conceitual
 - Débora Sofia: Diagrama
 - José Felipe: Projeto Lógico
 
-M3(17/11):
+# QUADRO DE TAREFAS
+M2(17/11):
+- Carlos Vinícius:
+- Débora Sofia: Criação das tabelas USUÁRIO e ESPÉCIE.
+- José Felipe:
+
+
 M4(17/11):
 M5(24/11):
 M6(01/12):
