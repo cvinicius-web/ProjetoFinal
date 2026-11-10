@@ -1,27 +1,24 @@
 
-Usuario(CPF[pk], Nome, Endereco, Telefone, Nascimento)
+Usuario(CPF[pk], Nome, Email, Senha, Endereco, Telefone, Nascimento)
 
 Adotante(CPF[pk])
-- CPF referencia Usuario
+- CPF referencia Usuario(CPF)
 
 Especie(ID_especie[pk], Nome_especie)
 
 Vacina(ID_vacina[pk], Nome_vacina)
 
 Especie_Vacina(ID_especie[pk], ID_vacina[pk])                      
-- ID_especie referencia Especie
-- ID_vacina referência Vacina
+- ID_especie referencia Especie(ID_especie)
+- ID_vacina referência Vacina(ID_vacina)
 
 Animal(ID_animal[pk], Nome, Porte, Sexo, Data_resgate, Situacao, Idade_estimada, ID_especie)
-- ID_especie referencia Especie                 
+- ID_especie referencia Especie(ID_especie)                 
 
 Aplicacao_vacina(ID_animal[pk], ID_vacina[pk], Data_aplicacao[pk])     
-- ID_animal referencia Animal
-- ID_vacina referencia Vacina
+- ID_animal referencia Animal(ID_animal)
+- ID_vacina referencia Vacina(ID_Vacina)
 
-Pedido_adocao(ID_pedido[pk], Status, Data, ID_animal)
-- ID_animal referencia para Animal                    
-
-Pedido_Adotante(ID_pedido[pk], CPF[pk])                             
-- ID_pedido referencia para Pedido_adocao
-- CPF referencia Adotante
+Pedido_adocao (ID_pedido[pk], Status, Data, ID_animal, CPF)   
+- ID_animal referencia Animal(ID_animal)   
+- CPF referencia Adotante(CPF)
