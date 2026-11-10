@@ -12,7 +12,7 @@ M1(10/11):
 
 # QUADRO DE TAREFAS
 M2(17/11):
-- Carlos Vinícius:
+- Carlos Vinícius: Criação das tabelas VACINA, ANIMAL, PEDIDO_ADOCAO.
 - Débora Sofia: Criação das tabelas USUÁRIO e ESPÉCIE.
 - José Felipe:
 
