@@ -1,0 +1,29 @@
+# CARLOS VINICIUS
+
+create table Vacina (
+
+ID_vacina int primary key,
+Nome_vacina varchar(20)
+);
+
+create table Animal (
+
+ID_animal int primary key,
+Nome varchar(15),
+Porte varchar(5),
+Sexo varchar(10),
+data_resgate char(10),
+Situacao varchar(20),
+Idade_estimada int,
+ID_especie int,
+
+ID_especie references Especie(ID_especie));
+
+create table Pedido_adocao (
+
+ID_pedido int primary key,
+Status varchar(10),
+Data char(10),
+ID_animal int,
+
+ID_animal references Animal(ID_animal));
