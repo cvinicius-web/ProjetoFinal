@@ -1,1 +1,1 @@
-
+Fiquei responsável pelo Diagrama de Classes, então, no dia 09/11 elaborei o diagrama utilizando o site draw.io. Encontrei dificuldades em definir cardinalidades, relacionar tabelas e organização. Mas, com paciência e consultando a IA, consegui fazer tudo corretamente.
