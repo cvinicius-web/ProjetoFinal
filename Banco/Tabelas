@@ -1,4 +1,4 @@
-# CARLOS VINICIUS
+--------------- CARLOS VINICIUS ---------------
 
 create table Vacina (
 
@@ -27,3 +27,5 @@ Data char(10),
 ID_animal int,
 
 ID_animal references Animal(ID_animal));
+
+--------------- DEBORA SOFIA ---------------
