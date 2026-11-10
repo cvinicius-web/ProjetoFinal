@@ -21,7 +21,4 @@ Aplicacao_vacina(ID_animal[pk], ID_vacina[pk], Data_aplicacao[pk])
 
 Pedido_adocao (ID_pedido[pk], Status, Data, ID_animal, CPF)   
 - ID_animal referencia Animal(ID_animal)   
-
-Pedido_adocao_adotante (CPF[pk], ID_pedido[pk])
-- CPF referencia Adotante(CPF) 
-- ID_pedido referencia Pedido_adocao(ID_pedido)
+- CPF referencia Adotante(CPF)
