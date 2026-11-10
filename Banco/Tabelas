@@ -1,3 +1,21 @@
+--------------- DEBORA SOFIA ---------------
+
+create table Usuario(
+CPF char (11),
+Senha varchar(50),
+Email varchar (50),
+Adotante varchar (50),
+Nome varchar (50),
+Endereco varchar (50),
+Telefone char (11),
+Nascimento char (10)
+);
+
+create table Especie(
+ID_especie int primary key,
+Nome_especie varchar (50)
+);
+
 --------------- CARLOS VINICIUS ---------------
 
 create table Vacina (
@@ -28,4 +46,5 @@ ID_animal int,
 
 ID_animal references Animal(ID_animal));
 
---------------- DEBORA SOFIA ---------------
+
+
