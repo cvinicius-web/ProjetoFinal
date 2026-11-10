@@ -8,7 +8,7 @@ Vacina(ID_vacina[pk], Nome_vacina)
 Animal(ID_animal[pk], Nome, Porte, Sexo, Data_resgate, Situacao, Idade_estimada, ID_especie)
 - ID_especie referencia Especie(ID_especie)                 
 
-Pedido_adocao (ID_pedido[pk], Status, Data, ID_animal, CPF)   
+Pedido_adocao (ID_pedido[pk], Status, Data, ID_animal)   
 - ID_animal referencia Animal(ID_animal)   
 
 Pedido_adocao_Usuario (CPF[pk], ID_pedido[pk])
