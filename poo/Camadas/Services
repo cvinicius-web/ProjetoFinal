@@ -6,9 +6,7 @@ class EspecieService {
     }
 
     cadastrarEspecie(idEspecie, nomeEspecie) {
-    
         const novaEspecie = new Especie(idEspecie, nomeEspecie)
-       
         return this.especieRepository.salvar(novaEspecie)
     }
 
