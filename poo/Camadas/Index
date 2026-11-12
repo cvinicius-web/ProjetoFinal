@@ -6,7 +6,4 @@ const service = new EspecieService(repo)
 
 service.cadastrarEspecie(1, "Canina")
 service.cadastrarEspecie(2, "Felina")
-
-//Teste de erro
-service.cadastrarEspecie(3, "")
 console.log(service.listarEspécies())
