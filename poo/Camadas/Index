@@ -1,11 +1,12 @@
 const EspecieRepository = require('./repositories/EspecieRepository')
 const EspecieService = require('./services/EspecieService')
-const EspecieController = require('./controllers/EspecieController')
 
 const repo = new EspecieRepository()
 const service = new EspecieService(repo)
-const controller = new EspecieController(service)
-controller.cadastrar(1, "Canina")
 
-console.log("Espécies registadas no sistema:")
-console.log(controller.listar())
+service.cadastrarEspecie(1, "Canina")
+service.cadastrarEspecie(2, "Felina")
+
+//Teste de erro
+service.cadastrarEspecie(3, "")
+console.log(service.listarEspécies())
