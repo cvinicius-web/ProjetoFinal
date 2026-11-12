@@ -1,6 +1,6 @@
-const EspecieRepository = require('./repositories/EspecieRepository');
-const EspecieService = require('./services/EspecieService');
-const EspecieController = require('./controllers/EspecieController');
+const EspecieRepository = require('./repositories/EspecieRepository')
+const EspecieService = require('./services/EspecieService')
+const EspecieController = require('./controllers/EspecieController')
 
 const repo = new EspecieRepository()
 const service = new EspecieService(repo)
