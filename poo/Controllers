@@ -1,0 +1,22 @@
+class EspecieController {
+    constructor(especieService) {
+        this.especieService = especieService
+    }
+
+    cadastrar(idEspecie, nomeEspecie) {
+        try {
+            const especieSalva = this.especieService.cadastrarEspecie(idEspecie, nomeEspecie)
+            console.log(` Espécie '${especieSalva.nomeEspecie}' cadastrada com sucesso!`)
+            return true
+        } catch (error) {
+            console.error(`Erro: ${error.message}`)
+            return false
+        }
+    }
+
+    listar() {
+        return this.especieService.listarEspécies()
+    }
+}
+
+module.exports = EspecieController
