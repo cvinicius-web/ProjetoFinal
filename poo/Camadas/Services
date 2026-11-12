@@ -6,18 +6,9 @@ class EspecieService {
     }
 
     cadastrarEspecie(idEspecie, nomeEspecie) {
-        if (!nomeEspecie || nomeEspecie.trim() === "") {
-            throw new Error("O nome da espécie não pode estar vazio!")
-        }
-
-        const especiesExistentes = this.especieRepository.listarTodos()
-        const jaExiste = especiesExistentes.find(e => e.idEspecie === idEspecie)
-        if (jaExiste) {
-            throw new Error(`Já existe uma espécie registada com o ID ${idEspecie}!`)
-        }
-
-  
+    
         const novaEspecie = new Especie(idEspecie, nomeEspecie)
+       
         return this.especieRepository.salvar(novaEspecie)
     }
 
