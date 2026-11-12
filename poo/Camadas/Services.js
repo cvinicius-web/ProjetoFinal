@@ -1,4 +1,4 @@
-const Especie = require('../entities/Especie')
+const Especie = require('./entities')
 
 class EspecieService {
     constructor(especieRepository) {
@@ -7,6 +7,7 @@ class EspecieService {
 
     cadastrarEspecie(idEspecie, nomeEspecie) {
         const novaEspecie = new Especie(idEspecie, nomeEspecie)
+
         return this.especieRepository.salvar(novaEspecie)
     }
 
