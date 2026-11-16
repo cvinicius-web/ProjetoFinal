@@ -1,16 +1,19 @@
-class EspecieRepository {
-    constructor() {
-        this.database = []
+import { Animal } from "./Animal"
+
+export class AnimalRepository {
+
+    private animais: Animal[] =[]
+
+    salvar(animal: Animal): void {
+        this.animais.push(animal)
     }
 
-    salvar(especie) {
-        this.database.push(especie)
-        return especie
+    listar(): Animal[] {
+        return this.animais
     }
 
-    listarTodos() {
-        return this.database
+    buscarPorId(id: number): Animal | undefined {
+        return this.animais.find((a) => a.getId() === id)
     }
 }
 
-module.exports = EspecieRepository
