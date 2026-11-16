@@ -1,8 +1,0 @@
-class Especie {
-    constructor(idEspecie, nomeEspecie) {
-        this.idEspecie = idEspecie
-        this.nomeEspecie = nomeEspecie
-    }
-}
-
-module.exports = Especie
