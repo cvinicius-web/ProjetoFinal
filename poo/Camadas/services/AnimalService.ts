@@ -24,7 +24,7 @@ export class AnimalService {
             throw new Error("A espécie solicitada ainda não foi cadastrada")
         }
 
-        const novoAnimal = new Animal(id, nome, especieExiste, idadeEstimada, porte, sexo, dataResgate)
+        const novoAnimal = new Animal(id, nome, idadeEstimada, especieExiste, porte, sexo, dataResgate)
         this.animalRepository.salvar(novoAnimal)
         return novoAnimal 
     } 
