@@ -23,7 +23,7 @@ export class Animal {
         return this.nome
     }
 
-    getEscpecie(): Especie {
+    getEspecie(): Especie {
         return this.especie
     }
 
