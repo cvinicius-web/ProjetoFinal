@@ -158,9 +158,6 @@ foreign key (ID_animal) references Animal(ID_animal),
 foreign key (ID_vacina) references Vacina(ID_vacina)
 );
 
-
-
- 
 insert into Especie (ID_especie, Nome_especie) values
 (1, 'Cachorro'),
 (2, 'Gato'),
