@@ -4,5 +4,5 @@
 
 - Dia 17/11 concluímos nossa apresentação do marco 2 de poo.
 
-- Dia 18/11 arrumei minhas tableas, criei as views e auxiliei na organização das outras tabelas SQL.
+- Dia 18/11 arrumei minhas tabelas, criei as views e auxiliei na organização das outras tabelas SQL.
 
