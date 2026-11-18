@@ -2,3 +2,7 @@
 
 - Dia 10/11 organizamos quem ficaria com cada tabela e fiquei responsável por USUÁRIO e ESPÉCIE e por enquanto conclui a minha parte com a criação das tabelas que a mim foram designadas.
 
+- Dia 17/11 concluímos nossa apresentação do marco 2 de poo.
+
+- Dia 18/11 arrumei minhas tableas, criei as views e auxiliei na organização das outras tabelas SQL.
+
