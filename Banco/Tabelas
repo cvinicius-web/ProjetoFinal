@@ -16,8 +16,8 @@ ID_especie int primary key,
 Nome_especie varchar (50)
 );
 
---------------- CARLOS VINICIUS ---------------
 
+--------------- CARLOS VINICIUS ---------------
 create table Vacina (
 
 ID_vacina int primary key,
@@ -34,6 +34,7 @@ data_resgate char(10),
 Situacao varchar(20),
 Idade_estimada int,
 ID_especie int,
+Foto longtext,
 
 ID_especie references Especie(ID_especie));
 
@@ -45,6 +46,117 @@ Data char(10),
 ID_animal int,
 
 ID_animal references Animal(ID_animal));
+
+
+--------------- JOSE FELIPE ---------------
+
+create table Pedido_adocao_Usuario (
+CPF char(11),
+ID_pedido int,
+
+primary key (CPF, ID_pedido),
+
+foreign key (CPF) references Usuario(CPF),
+foreign key (ID_pedido) references Pedido_adocao(ID_pedido)
+);
+
+create table Especie_Vacina (
+ID_especie int,
+ID_vacina int,
+
+primary key(ID_especie, ID_vacina),
+
+foreign key (ID_especie) references Especie(ID_especie),
+foreign key (ID_vacina) references Vacina(ID_vacina)
+);
+
+create table Aplicacao_vacina (
+
+ID_animal int,
+ID_vacina int,
+Data_aplicacao date,
+primary key(ID_animal, ID_vacina),
+
+foreign key (ID_animal) references Animal(ID_animal)
+);
+
+----------------------------------------------------------
+
+create table Usuario(
+CPF char (11) primary key,
+Senha varchar(50),
+Email varchar (50),
+Adotante varchar (50),
+Nome varchar (50),
+Endereco varchar (50),
+Telefone char (11),
+Nascimento char (10)
+);
+
+create table Especie(
+ID_especie int primary key,
+Nome_especie varchar (50)
+);
+
+create table Vacina (
+ID_vacina int primary key,
+Nome_vacina varchar(20)
+);
+
+create table Animal (
+ID_animal int primary key,
+Nome varchar(15),
+Porte varchar(5),
+Sexo varchar(10),
+data_resgate char(10),
+Situacao varchar(20),
+Idade_estimada int,
+ID_especie int,
+Foto longtext,
+
+foreign key (ID_especie) references Especie(ID_especie));
+
+create table Pedido_adocao (
+ID_pedido int primary key,
+Status varchar(10),
+Data char(10),
+ID_animal int,
+
+foreign key (ID_animal) references Animal(ID_animal));
+
+create table Pedido_adocao_Usuario (
+CPF char(11),
+ID_pedido int,
+
+primary key (CPF, ID_pedido),
+
+foreign key (CPF) references Usuario(CPF),
+foreign key (ID_pedido) references Pedido_adocao(ID_pedido)
+);
+
+create table Especie_Vacina (
+ID_especie int,
+ID_vacina int,
+
+primary key(ID_especie, ID_vacina),
+
+foreign key (ID_especie) references Especie(ID_especie),
+foreign key (ID_vacina) references Vacina(ID_vacina)
+);
+
+create table Aplicacao_vacina (
+
+ID_animal int,
+ID_vacina int,
+Data_aplicacao date,
+primary key(ID_animal, ID_vacina),
+
+foreign key (ID_animal) references Animal(ID_animal)
+);
+
+
+
+
 
 
 
