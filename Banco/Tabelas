@@ -93,7 +93,7 @@ Adotante varchar (50) not null,
 Nome varchar (50) not null,
 Endereco varchar (50) not null,
 Telefone char (11) not null unique,
-Nascimento char (10) not null
+Nascimento date not null
 );
 
 create table Especie(
@@ -111,7 +111,7 @@ ID_animal int primary key,
 Nome varchar(15) not null,
 Porte varchar(5) not null,
 Sexo varchar(10) not null,
-data_resgate char(10) not null,
+data_resgate date not null,
 Situacao varchar(20) not null,
 Idade_estimada int not null,
 ID_especie int not null,
@@ -121,8 +121,8 @@ foreign key (ID_especie) references Especie(ID_especie));
 
 create table Pedido_adocao (
 ID_pedido int primary key,
-Status varchar(10) not null,
-Data char(10) not null,
+Status varchar(20) not null,
+Data date not null,
 ID_animal int not null,
 
 foreign key (ID_animal) references Animal(ID_animal));
@@ -148,10 +148,10 @@ foreign key (ID_vacina) references Vacina(ID_vacina)
 );
 
 create table Aplicacao_vacina (
-
 ID_animal int not null,
 ID_vacina int not null,
 Data_aplicacao date not null,
+Data_proxima_dose date not null,
 primary key(ID_animal, ID_vacina),
 
 foreign key (ID_animal) references Animal(ID_animal),
@@ -183,42 +183,42 @@ insert into Vacina (ID_vacina, Nome_vacina) values
 (10, 'Mixomatose');
 
 insert into Usuario (CPF, Senha, Email, Adotante, Nome, Endereco, Telefone, Nascimento) values
-('11122233344', 'senha123', 'ana.silva@email.com', 'Sim', 'Ana Clara Silva', 'Rua das Flores, 120', '82999112233', '15/03/1990'),
-('22233344455', 'carlos@2026', 'carlos.mendes@email.com', 'Sim', 'Carlos Eduardo Mendes', 'Av. Fernandes Lima, 450', '82988223344', '22/07/1985'),
-('33344455566', 'mariana!99', 'mari.costa@email.com', 'Sim', 'Mariana Costa', 'Rua do Sol, 88', '82991334455', '10/11/1995'),
-('44455566677', 'joao_pass', 'joao.pereira@email.com', 'Nao', 'Joao Pedro Pereira', 'Rua Jangadeiros, 310', '82987445566', '04/01/1988'),
-('55566677788', 'beatriz#1', 'bia.almeida@email.com', 'Sim', 'Beatriz Almeida', 'Av. Alvaro Otacilio, 1020', '82996556677', '29/09/1992'),
-('66677788899', 'lucas789', 'lucas.santos@email.com', 'Sim', 'Lucas Gabriel Santos', 'Rua Sampaio Marques, 55', '82993667788', '18/05/1998'),
-('77788899900', 'fernanda*2', 'fer.oliveira@email.com', 'Sim', 'Fernanda Oliveira', 'Rua Epaminondas Gracindo, 210', '82981778899', '12/12/1983'),
-('88899900011', 'rafael321', 'rafa.lima@email.com', 'Nao', 'Rafael Souza Lima', 'Av. Ponta Verde, 700', '82994889900', '30/06/1991'),
-('99900011122', 'juliana_ok', 'ju.rocha@email.com', 'Sim', 'Juliana Rocha', 'Rua Dep. Jose Lages, 415', '82982990011', '25/04/1994'),
-('00011122233', 'pedro2025', 'pedro.gomes@email.com', 'Sim', 'Pedro Henrique Gomes', 'Rua Lourenco Moreira, 90', '82995001122', '08/08/1980');
+('11122233344', 'senha123', 'ana.silva@email.com', 'Sim', 'Ana Clara Silva', 'Rua das Flores, 120', '82999112233', '1990-03-15'),
+('22233344455', 'carlos@2026', 'carlos.mendes@email.com', 'Sim', 'Carlos Eduardo Mendes', 'Av. Fernandes Lima, 450', '82988223344', '1985-07-22'),
+('33344455566', 'mariana!99', 'mari.costa@email.com', 'Sim', 'Mariana Costa', 'Rua do Sol, 88', '82991334455', '1995-11-10'),
+('44455566677', 'joao_pass', 'joao.pereira@email.com', 'Nao', 'Joao Pedro Pereira', 'Rua Jangadeiros, 310', '82987445566', '1988-01-04'),
+('55566677788', 'beatriz#1', 'bia.almeida@email.com', 'Sim', 'Beatriz Almeida', 'Av. Alvaro Otacilio, 1020', '82996556677', '1992-09-29'),
+('66677788899', 'lucas789', 'lucas.santos@email.com', 'Sim', 'Lucas Gabriel Santos', 'Rua Sampaio Marques, 55', '82993667788', '1998-05-18'),
+('77788899900', 'fernanda*2', 'fer.oliveira@email.com', 'Sim', 'Fernanda Oliveira', 'Rua Epaminondas Gracindo, 210', '82981778899', '1983-12-12'),
+('88899900011', 'rafael321', 'rafa.lima@email.com', 'Nao', 'Rafael Souza Lima', 'Av. Ponta Verde, 700', '82994889900', '1991-06-30'),
+('99900011122', 'juliana_ok', 'ju.rocha@email.com', 'Sim', 'Juliana Rocha', 'Rua Dep. Jose Lages, 415', '82982990011', '1994-04-25'),
+('00011122233', 'pedro2025', 'pedro.gomes@email.com', 'Sim', 'Pedro Henrique Gomes', 'Rua Lourenco Moreira, 90', '82995001122', '1980-08-08');
 
 insert into Animal (ID_animal, Nome, Porte, Sexo, data_resgate, Situacao, Idade_estimada, ID_especie, Foto) values
-(1, 'Thor', 'Grand', 'Macho', '10/01/2026', 'Disponivel', 3, 1, 'foto_thor_base64_placeholder'),
-(2, 'Luna', 'Peq', 'Femea', '15/01/2026', 'Adotado', 2, 2, 'foto_luna_base64_placeholder'),
-(3, 'Bob', 'Medio', 'Macho', '02/02/2026', 'Disponivel', 4, 1, 'foto_bob_base64_placeholder'),
-(4, 'Mia', 'Peq', 'Femea', '14/02/2026', 'Em processo', 1, 2, 'foto_mia_base64_placeholder'),
-(5, 'Rex', 'Grand', 'Macho', '20/02/2026', 'Disponivel', 5, 1, 'foto_rex_base64_placeholder'),
-(6, 'Nina', 'Peq', 'Femea', '05/03/2026', 'Adotado', 1, 3, 'foto_nina_base64_placeholder'),
-(7, 'Simba', 'Medio', 'Macho', '18/03/2026', 'Disponivel', 2, 2, 'foto_simba_base64_placeholder'),
-(8, 'Mel', 'Peq', 'Femea', '01/04/2026', 'Disponivel', 3, 1, 'foto_mel_base64_placeholder'),
-(9, 'Pipoca', 'Peq', 'Macho', '12/04/2026', 'Adotado', 1, 4, 'foto_pipoca_base64_placeholder'),
-(10, 'Amora', 'Medio', 'Femea', '25/04/2026', 'Em processo', 2, 1, 'foto_amora_base64_placeholder'),
-(11, 'Chico', 'Peq', 'Macho', '03/05/2026', 'Disponivel', 4, 6, 'foto_chico_base64_placeholder'),
-(12, 'Bela', 'Grand', 'Femea', '19/05/2026', 'Disponivel', 6, 1, 'foto_bela_base64_placeholder');
+(1, 'Thor', 'Grand', 'Macho', '2026-01-10', 'Disponivel', 3, 1, 'foto_thor_base64_placeholder'),
+(2, 'Luna', 'Peq', 'Femea', '2026-01-15', 'Adotado', 2, 2, 'foto_luna_base64_placeholder'),
+(3, 'Bob', 'Medio', 'Macho', '2026-02-02', 'Disponivel', 4, 1, 'foto_bob_base64_placeholder'),
+(4, 'Mia', 'Peq', 'Femea', '2026-02-14', 'Em tratamento', 1, 2, 'foto_mia_base64_placeholder'),
+(5, 'Rex', 'Grand', 'Macho', '2026-02-20', 'Disponivel', 5, 1, 'foto_rex_base64_placeholder'),
+(6, 'Nina', 'Peq', 'Femea', '2026-03-05', 'Adotado', 1, 3, 'foto_nina_base64_placeholder'),
+(7, 'Simba', 'Medio', 'Macho', '2026-03-18', 'Disponivel', 2, 2, 'foto_simba_base64_placeholder'),
+(8, 'Mel', 'Peq', 'Femea', '2026-04-01', 'Disponivel', 3, 1, 'foto_mel_base64_placeholder'),
+(9, 'Pipoca', 'Peq', 'Macho', '2026-04-12', 'Adotado', 1, 4, 'foto_pipoca_base64_placeholder'),
+(10, 'Amora', 'Medio', 'Femea', '2026-04-25', 'Em tratamento', 2, 1, 'foto_amora_base64_placeholder'),
+(11, 'Chico', 'Peq', 'Macho', '2026-05-03', 'Disponivel', 4, 6, 'foto_chico_base64_placeholder'),
+(12, 'Bela', 'Grand', 'Femea', '2026-05-19', 'Disponivel', 6, 1, 'foto_bela_base64_placeholder');
 
 insert into Pedido_adocao (ID_pedido, Status, Data, ID_animal) values
-(1, 'Aprovado', '20/01/2026', 2),
-(2, 'Analise', '16/02/2026', 4),
-(3, 'Aprovado', '10/03/2026', 6),
-(4, 'Recusado', '15/03/2026', 1),
-(5, 'Aprovado', '18/04/2026', 9),
-(6, 'Analise', '28/04/2026', 10),
-(7, 'Pendente', '05/05/2026', 3),
-(8, 'Recusado', '10/05/2026', 5),
-(9, 'Pendente', '22/05/2026', 7),
-(10, 'Pendente', '01/06/2026', 8);
+(1, 'Aprovado', '2026-01-20', 2),
+(2, 'Analise', '2026-02-16', 4),
+(3, 'Aprovado', '2026-03-10', 6),
+(4, 'Recusado', '2026-03-15', 1),
+(5, 'Aprovado', '2026-04-18', 9),
+(6, 'Visita agendada', '2026-04-28', 10),
+(7, 'Analise', '2026-05-05', 3),
+(8, 'Recusado', '2026-05-10', 5),
+(9, 'Analise', '2026-05-22', 7),
+(10, 'Visita agendada', '2026-06-01', 8);
 
 insert into Pedido_adocao_Usuario (CPF, ID_pedido) values
 ('11122233344', 1),
@@ -244,17 +244,17 @@ insert into Especie_Vacina (ID_especie, ID_vacina) values
 (2, 5), -- Gato -> V4
 (3, 10); -- Coelho -> Mixomatose
 
-insert into Aplicacao_vacina (ID_animal, ID_vacina, Data_aplicacao) values
-(1, 2, '2026-01-12'),
-(1, 3, '2026-01-25'),
-(2, 4, '2026-01-17'),
-(2, 3, '2026-01-18'),
-(3, 2, '2026-02-05'),
-(4, 5, '2026-02-15'),
-(5, 1, '2026-02-22'),
-(6, 10, '2026-03-07'),
-(7, 4, '2026-03-20'),
-(8, 3, '2026-04-03');
+insert into Aplicacao_vacina (ID_animal, ID_vacina, Data_aplicacao, Data_proxima_dose) values
+(1, 2, '2026-01-12', '2027-01-12'),
+(1, 3, '2026-01-25', '2027-01-25'),
+(2, 4, '2026-01-17', '2027-01-17'),
+(2, 3, '2026-01-18', '2027-01-18'),
+(3, 2, '2026-02-05', '2027-02-05'),
+(4, 5, '2026-02-15', '2027-02-15'),
+(5, 1, '2026-02-22', '2027-02-22'),
+(6, 10, '2026-03-07', '2027-03-07'),
+(7, 4, '2026-03-20', '2027-03-20'),
+(8, 3, '2026-04-03', '2027-04-03');
 
 select a.nome, a.porte, a.sexo, e.Nome_especie
 from Animal a, Especie e
@@ -264,7 +264,7 @@ select e.Nome_especie, v.Nome_vacina
 from Especie e, Vacina v, Especie_Vacina es
 where e.ID_especie = es.ID_especie and es.ID_vacina = v.ID_vacina;
 
-select a.nome, v.Nome_vacina, av.Data_aplicacao
+select a.nome, v.Nome_vacina, av.Data_aplicacao, av.Data_proxima_dose
 from Animal a, Vacina v, Aplicacao_vacina av
 where a.ID_animal = av.ID_animal and av.ID_vacina = v.ID_vacina;
 
