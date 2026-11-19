@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Usuário — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <div class="form-card-container">
+        <div class="form-card-header" id="tituloFormularioCadastro">Cadastro de Usuário</div>
+
+        <div class="form-card-body">
+          <form id="formCadastroUsuario">
+            <input type="hidden" id="usuarioId" />
+
+            <div class="form-group">
+              <label class="form-label" for="cadNome">Nome *</label>
+              <input type="text" id="cadNome" class="form-control" placeholder="Digite seu nome" required />
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="cadCpf">CPF *</label>
+                <input type="text" id="cadCpf" class="form-control" placeholder="000.000.000-00" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cadNascimento">Nascimento *</label>
+                <input type="text" id="cadNascimento" class="form-control" placeholder="DD/MM/AAAA" required />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="cadSexo">Sexo</label>
+                <select id="cadSexo" class="form-control">
+                  <option value="">Selecione</option>
+                  <option value="Feminino">Feminino</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cadTelefone">Telefone *</label>
+                <input type="text" id="cadTelefone" class="form-control" placeholder="(82) 99999-0000" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cadEndereco">Endereço</label>
+              <input type="text" id="cadEndereco" class="form-control" placeholder="Ex: Maceió - AL" />
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="cadEmail">Email *</label>
+                <input type="email" id="cadEmail" class="form-control" placeholder="email@email.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cadSenha">Senha *</label>
+                <input type="password" id="cadSenha" class="form-control" placeholder="Digite sua senha" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cadAdotante">Adotante</label>
+              <select id="cadAdotante" class="form-control">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+              </select>
+            </div>
+
+            <div class="form-actions-stack">
+              <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+              <a href="usuarios.html" class="btn btn-dark btn-block">Voltar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

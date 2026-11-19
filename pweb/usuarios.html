@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usuários Cadastrados — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <section class="card-section">
+        <h1 class="section-title">Usuários Cadastrados</h1>
+
+        <div class="toolbar">
+          <input type="text" id="campoPesquisa" class="form-control" placeholder="Pesquisar usuário por nome, CPF ou email..." />
+          <button type="button" id="btnPesquisar" class="btn btn-primary">Pesquisar</button>
+          <a href="cadastro.html" class="btn btn-dark">Novo Usuário</a>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nome</th><th>CPF</th><th>Email</th><th>Senha</th>
+                <th>Nascimento</th><th>Telefone</th><th>Endereço</th>
+                <th>Adotante</th><th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaUsuariosBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

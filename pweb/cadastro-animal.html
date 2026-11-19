@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Animal — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <div class="form-card-container">
+        <div class="form-card-header">Cadastrar Animal para Adoção</div>
+
+        <div class="form-card-body">
+          <form id="formCadastroAnimal">
+            <div class="form-group">
+              <label class="form-label" for="animalNome">Nome do Animal *</label>
+              <input type="text" id="animalNome" class="form-control" placeholder="Ex: Thor, Luna, Bob..." required />
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="animalEspecie">Espécie *</label>
+                <select id="animalEspecie" class="form-control" required>
+                  <option value="Cachorro">Cachorro</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="animalIdade">Idade *</label>
+                <input type="text" id="animalIdade" class="form-control" placeholder="Ex: 2 anos, 6 meses" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="animalFotoArquivo">Foto do Animal *</label>
+              <input type="file" id="animalFotoArquivo" class="form-control" accept="image/*" required />
+              <div id="previewFotoBox" class="photo-preview-box" style="display: none;">
+                <img id="previewFotoImg" src="" alt="Pré-visualização do animal" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="animalDescricao">Descrição / Características *</label>
+              <textarea id="animalDescricao" class="form-control" rows="3" placeholder="Ex: Vacinado, castrado, dócil com crianças..." required></textarea>
+            </div>
+
+            <div class="form-actions-stack">
+              <button type="submit" class="btn btn-primary btn-block">Salvar Animal</button>
+              <a href="inicio.html" class="btn btn-dark btn-block">Voltar para Início</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

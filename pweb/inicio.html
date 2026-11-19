@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Início — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <section class="card-section hero-banner">
+        <div>
+          <h1 class="section-title">Bem-vindo ao Abrigo Patinhas!</h1>
+          <p>Aqui você encontra animais que precisam de um lar cheio de amor e carinho. Conheça nossos resgatados ou gerencie os adotantes cadastrados.</p>
+        </div>
+        <div class="hero-illustration">
+          <img src="logo-patinhas.svg" alt="Patinhas" width="52" height="52" />
+          <div>
+            <strong>Maceió - AL</strong>
+            <small>+120 adoções realizadas</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="animais" class="card-section">
+        <div class="section-header-row">
+            <h2 class="section-title" style="margin-bottom: 0;">Animais disponíveis para adoção</h2>
+            <a href="cadastro-animal.html" id="btnNovoAnimalTopo" class="btn btn-primary btn-sm">+ Cadastrar Animal</a>
+        </div>
+
+        <div id="listaAnimaisGrid" class="pets-grid"></div>
+      </section>
+
+      <section id="adocao" class="card-section">
+        <h2 class="section-title">Como adotar?</h2>
+        <ol class="steps-list">
+          <li>Escolha seu animal favorito.</li>
+          <li>Entre em contato com o abrigo.</li>
+          <li>Agende uma visita.</li>
+          <li>Dê um novo lar ao animal!</li>
+        </ol>
+      </section>
+
+      <div class="two-cols">
+        <section id="doacoes" class="card-section">
+          <h2 class="section-title">Ajude nosso abrigo!</h2>
+          <p class="text-muted">Você pode contribuir com alimentos, medicamentos e doações.</p>
+          <button class="btn btn-dark btn-sm" onclick="abrirModalPet('Como Ajudar', 'Aceitamos ração, medicamentos veterinários e doações via PIX: contato@abrigo.com')">Saiba como ajudar</button>
+        </section>
+
+        <section id="contato" class="card-section">
+          <h2 class="section-title">Contato</h2>
+          <p class="text-muted">Email: contato@abrigo.com</p>
+          <p class="text-muted">Telefone: (82) 0000-0000</p>
+        </section>
+      </div>
+
+      <footer class="page-footer">© 2026 Abrigo Patinhas - Todos os direitos reservados.</footer>
+    </main>
+  </div>
+
+  <div id="petModal" class="modal-backdrop">
+    <div class="modal-box">
+      <h3 id="modalTitulo" class="section-title"></h3>
+      <p id="modalDescricao" class="modal-text"></p>
+      <button class="btn btn-primary btn-block" onclick="fecharModalPet()">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
