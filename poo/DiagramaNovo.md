@@ -1,6 +1,4 @@
 
-# Diagrama de Classes
-
 ```mermaid
 classDiagram
 direction TB
