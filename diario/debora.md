@@ -6,3 +6,4 @@
 
 - Dia 18/11 arrumei minhas tabelas, criei as views e auxiliei na organização das outras tabelas SQL.
 
+- Dia 24/11 em poo concluímos a entrega do marco três mostrando os códigos atualizados.
