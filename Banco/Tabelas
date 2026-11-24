@@ -1,7 +1,7 @@
 --------------- DEBORA SOFIA ---------------
 
 create table Usuario(
-CPF char (11),
+CPF char (11) primary key,
 Senha varchar(50),
 Email varchar (50),
 Adotante varchar (50),
