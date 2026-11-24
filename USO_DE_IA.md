@@ -11,3 +11,11 @@
 - Compreensão dos conceitos de classe associativa, cardinalidades, auxílio na interface do site e organização das tabelas.
 - Classe associativa e cardinalidades.
 - Com o auxílio da IA, consegui organizar, definir as tabelas corretamente e entender os conceitos dos temas que estava em dúvida.
+
+-----
+
+24/11:
+- Carlos Vinícius
+- Gemini
+- Ajuda no povoamento do banco e no uso do mermaid para o diagrama de classes
+
