@@ -237,38 +237,57 @@ insert into Aplicacao_vacina (ID_animal, ID_vacina, Data_aplicacao, Data_proxima
 (7, 4, '2026-03-20', '2027-03-20'),
 (8, 3, '2026-04-03', '2027-04-03');
 
-select a.nome, a.porte, a.sexo, e.Nome_especie
-from Animal a, Especie e
-where a.ID_especie = e.ID_especie and a.Situacao = 'Disponivel';
-
-select e.Nome_especie, v.Nome_vacina
-from Especie e, Vacina v, Especie_Vacina es
-where e.ID_especie = es.ID_especie and es.ID_vacina = v.ID_vacina;
-
+-- funcionalidade 2
 select a.nome, v.Nome_vacina, av.Data_aplicacao, av.Data_proxima_dose
 from Animal a, Vacina v, Aplicacao_vacina av
 where a.ID_animal = av.ID_animal and av.ID_vacina = v.ID_vacina;
 
-select e.Nome_especie, count(a.nome)
-from Especie e, Animal a
-where e.ID_especie = a.ID_especie
-group by e.Nome_especie;
+-- Funcionalidade 3
+select a.nome, a.porte, a.sexo, e.Nome_especie
+from Animal a, Especie e
+where a.ID_especie = e.ID_especie and a.Situacao = 'Disponivel';
 
-create view vw_pedidos_pendentes as
-select p.ID_pedido, p.Data, a.nome
-from Pedido_adocao p, Animal a
-where a.ID_animal = p.ID_animal;
+-- Funcionalidade 4
+select ID_pedido, Status, ID_animal
+from Pedido_adocao;
 
-select * from vw_pedidos_pendentes;
+update pedido_adocao
+set Status = 'Aprovado'
+where ID_pedido = 4;
 
-create view vw_adotantes as
-select Nome, Email, Telefone
-from Usuario
-where Adotante = 'Sim';
+-- Funcionalidade 5
 
-select Nome
-from vw_adotantes
-order by Nome asc;
+-- Animais disponíveis a mais tempo
+create view vw_AnimaisPorTempo as 
+select Nome, data_resgate
+from Animal
+order by data_resgate asc;
+
+select * from vw_AnimaisPorTempo;
+
+-- Adoções por mês
+Set lc_time_names = 'pt_BR';
+select monthname(Data), count(ID_pedido)
+from pedido_adocao
+where Status = 'Aprovado' 
+group by monthname(Data);
+
+-- Vacinas que vencem em 15 dias
+select v.Nome_vacina, av.Data_proxima_dose
+from Vacina v, Aplicacao_vacina av
+where v.ID_vacina = av.ID_vacina and av.Data_proxima_dose between curdate() and date_add(curdate(), interval 15 day);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
