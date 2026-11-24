@@ -123,23 +123,16 @@ create table Pedido_adocao (
 ID_pedido int primary key,
 Status varchar(20) not null,
 Data date not null,
+CPF char(11) not null,
 ID_animal int not null,
 
-foreign key (ID_animal) references Animal(ID_animal));
-
-create table Pedido_adocao_Usuario (
-CPF char(11) not null,
-ID_pedido int not null,
-
-primary key (CPF, ID_pedido),
-
 foreign key (CPF) references Usuario(CPF),
-foreign key (ID_pedido) references Pedido_adocao(ID_pedido)
-);
+foreign key (ID_animal) references Animal(ID_animal));
 
 create table Especie_Vacina (
 ID_especie int not null,
 ID_vacina int not null,
+Obrigatoria boolean not null,
 
 primary key(ID_especie, ID_vacina),
 
@@ -208,41 +201,29 @@ insert into Animal (ID_animal, Nome, Porte, Sexo, data_resgate, Situacao, Idade_
 (11, 'Chico', 'Peq', 'Macho', '2026-05-03', 'Disponivel', 4, 6, 'foto_chico_base64_placeholder'),
 (12, 'Bela', 'Grand', 'Femea', '2026-05-19', 'Disponivel', 6, 1, 'foto_bela_base64_placeholder');
 
-insert into Pedido_adocao (ID_pedido, Status, Data, ID_animal) values
-(1, 'Aprovado', '2026-01-20', 2),
-(2, 'Analise', '2026-02-16', 4),
-(3, 'Aprovado', '2026-03-10', 6),
-(4, 'Recusado', '2026-03-15', 1),
-(5, 'Aprovado', '2026-04-18', 9),
-(6, 'Visita agendada', '2026-04-28', 10),
-(7, 'Analise', '2026-05-05', 3),
-(8, 'Recusado', '2026-05-10', 5),
-(9, 'Analise', '2026-05-22', 7),
-(10, 'Visita agendada', '2026-06-01', 8);
+insert into Pedido_adocao (ID_pedido, Status, Data, CPF, ID_animal) values
+(1, 'Aprovado', '2026-01-20', '11122233344', 2),
+(2, 'Analise', '2026-02-16', '22233344455', 4),
+(3, 'Aprovado', '2026-03-10', '33344455566', 6),
+(4, 'Recusado', '2026-03-15', '55566677788', 1),
+(5, 'Aprovado', '2026-04-18', '66677788899', 9),
+(6, 'Visita agendada', '2026-04-28', '77788899900', 10),
+(7, 'Analise', '2026-05-05', '99900011122', 3),
+(8, 'Recusado', '2026-05-10', '00011122233', 5),
+(9, 'Analise', '2026-05-22', '11122233344', 7),
+(10, 'Visita agendada', '2026-06-01', '33344455566', 8);
 
-insert into Pedido_adocao_Usuario (CPF, ID_pedido) values
-('11122233344', 1),
-('22233344455', 2),
-('33344455566', 3),
-('55566677788', 4),
-('66677788899', 5),
-('77788899900', 6),
-('99900011122', 7),
-('00011122233', 8),
-('11122233344', 9),
-('33344455566', 10);
-
-insert into Especie_Vacina (ID_especie, ID_vacina) values
-(1, 1), -- Cachorro -> V8
-(1, 2), -- Cachorro -> V10
-(1, 3), -- Cachorro -> Antirrabica
-(1, 7), -- Cachorro -> Gripe Canina
-(1, 8), -- Cachorro -> Giardiase
-(1, 9), -- Cachorro -> Leishmaniose
-(2, 3), -- Gato -> Antirrabica
-(2, 4), -- Gato -> V3
-(2, 5), -- Gato -> V4
-(3, 10); -- Coelho -> Mixomatose
+insert into Especie_Vacina (ID_especie, ID_vacina, Obrigatoria) values
+(1, 1, true), -- Cachorro -> V8
+(1, 2, true), -- Cachorro -> V10
+(1, 3, true), -- Cachorro -> Antirrabica
+(1, 7, false), -- Cachorro -> Gripe Canina
+(1, 8, false), -- Cachorro -> Giardiase
+(1, 9, false), -- Cachorro -> Leishmaniose
+(2, 3, true), -- Gato -> Antirrabica
+(2, 4, true), -- Gato -> V3
+(2, 5, false), -- Gato -> V4
+(3, 10, true); -- Coelho -> Mixomatose
 
 insert into Aplicacao_vacina (ID_animal, ID_vacina, Data_aplicacao, Data_proxima_dose) values
 (1, 2, '2026-01-12', '2027-01-12'),
@@ -288,7 +269,6 @@ where Adotante = 'Sim';
 select Nome
 from vw_adotantes
 order by Nome asc;
-
 
 
 
