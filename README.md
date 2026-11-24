@@ -15,8 +15,12 @@ M2(17/11):
 - Débora Sofia: Criação das tabelas USUÁRIO e ESPÉCIE.
 - José Felipe: Criação das tabelas: PEDIDO_ADOCAO_USUARIO, ESPECIE_VACINA, APLICACAO-VACINA.
 
-M3(17/11):
+M3(24/11):
+- Carlos Vinícius:  Classes de POO e consultas.
+- Débora Sofia: Consultas.
+- José Felipe: Tela de Login e Conexão do Banco.
+(Todos fizeram ou modificaram algo).
 
-M4(24/11):
-M5(01/12):
+
+M4(01/12):
 
