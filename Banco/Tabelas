@@ -82,6 +82,7 @@ foreign key (ID_animal) references Animal(ID_animal)
 
 ----------------------------------------------------------
 
+
 create database Abrigo;
 use Abrigo;
 
@@ -276,6 +277,28 @@ group by monthname(Data);
 select v.Nome_vacina, av.Data_proxima_dose
 from Vacina v, Aplicacao_vacina av
 where v.ID_vacina = av.ID_vacina and av.Data_proxima_dose between curdate() and date_add(curdate(), interval 15 day);
+
+update Usuario
+set Adotante = 'Sim'
+where CPF = '44455566677';
+
+Update Usuario
+set Adotante = "Sim"
+where CPF = '88899900011';
+
+select * from Usuario;
+
+INSERT INTO Usuario (CPF, Senha, Email, Adotante, Nome, Endereco, Telefone, Nascimento)
+VALUES ('99999999999', '123456', 'admin@abrigo.com', 'SuperAdmin', 'Super Administrador', 'Sede do Abrigo', '82900000000', '1990-01-01');
+
+
+
+
+
+
+
+
+
 
 
 
