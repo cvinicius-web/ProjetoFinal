@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espécies e Vacinas — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <div class="form-card-container" style="margin-bottom: 24px;">
+        <div class="form-card-header">Cadastros Clínicos e Espécies</div>
+
+        <div class="form-card-body">
+          <div class="form-group">
+            <label class="form-label" for="tipoCadastroIntegrado">O que deseja cadastrar? *</label>
+            <select id="tipoCadastroIntegrado" class="form-control">
+              <option value="especie">Espécie</option>
+              <option value="vacina">Vacina</option>
+              <option value="aplicacao">Histórico de Aplicação de Vacina</option>
+            </select>
+          </div>
+
+          <form id="formEspecie">
+            <div class="form-group">
+              <label class="form-label" for="nomeEspecie">Nome da Espécie *</label>
+              <input type="text" id="nomeEspecie" class="form-control" maxlength="50" placeholder="Ex: Cachorro, Gato, Coelho..." required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Salvar Espécie</button>
+          </form>
+
+          <form id="formVacina" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="nomeVacina">Nome da Vacina *</label>
+              <input type="text" id="nomeVacina" class="form-control" maxlength="20" placeholder="Ex: V10 Polivalente, Antirrabica..." required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Salvar Vacina</button>
+          </form>
+
+          <form id="formAplicacao" style="display: none;">
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="aplAnimal">Animal *</label>
+                <select id="aplAnimal" class="form-control" required></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="aplVacina">Vacina *</label>
+                <select id="aplVacina" class="form-control" required></select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="aplData">Data da Aplicação *</label>
+                <input type="date" id="aplData" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="aplProxima">Data da Próxima Dose *</label>
+                <input type="date" id="aplProxima" class="form-control" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Registrar Aplicação</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="card-section">
+        <h2 class="section-title" id="tituloTabelaIntegrada">Espécies Cadastradas</h2>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead id="theadIntegrada"></thead>
+            <tbody id="tbodyIntegrada"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="services.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

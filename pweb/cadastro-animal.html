@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Animal — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <div class="form-card-container">
+        <div class="form-card-header">Cadastrar Animal para Adoção</div>
+
+        <div class="form-card-body">
+          <form id="formCadastroAnimal">
+            <div class="form-group">
+              <label class="form-label" for="animalNome">Nome do Animal *</label>
+              <input type="text" id="animalNome" class="form-control" maxlength="15" placeholder="Ex: Thor, Luna, Bob..." required />
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="animalEspecie">Espécie *</label>
+                <select id="animalEspecie" class="form-control" required></select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="animalIdade">Idade Estimada (anos) *</label>
+                <input type="number" id="animalIdade" class="form-control" min="0" max="40" placeholder="Ex: 2" required />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="animalPorte">Porte *</label>
+                <select id="animalPorte" class="form-control" required>
+                  <option value="Peq">Pequeno</option>
+                  <option value="Medio">Médio</option>
+                  <option value="Grand">Grande</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="animalSexo">Sexo *</label>
+                <select id="animalSexo" class="form-control" required>
+                  <option value="Macho">Macho</option>
+                  <option value="Femea">Fêmea</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="animalFotoArquivo">Foto do Animal *</label>
+              <input type="file" id="animalFotoArquivo" class="form-control" accept="image/*" required />
+              <div id="previewFotoBox" class="photo-preview-box" style="display: none;">
+                <img id="previewFotoImg" src="" alt="Pré-visualização do animal" />
+              </div>
+            </div>
+
+            <div class="form-actions-stack">
+              <button type="submit" class="btn btn-primary btn-block">Salvar Animal</button>
+              <a href="inicio.html" class="btn btn-dark btn-block">Voltar para Início</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="services.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

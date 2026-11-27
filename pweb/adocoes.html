@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos de Adoção — Abrigo Patinhas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside id="sidebarContainer" class="sidebar"></aside>
+
+    <main class="main-content">
+      <div id="boxSolicitarAdocao" class="form-card-container" style="margin-bottom: 24px; display: none;">
+        <div class="form-card-header">Solicitar Adoção</div>
+        <div class="form-card-body">
+          <form id="formPedidoAdocao">
+            <div class="form-group">
+              <label class="form-label" for="pedidoAnimal">Selecione o Animal Disponível *</label>
+              <select id="pedidoAnimal" class="form-control" required></select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Enviar Pedido de Adoção</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="card-section">
+        <h1 class="section-title" id="tituloPedidosAdocao">Pedidos de Adoção</h1>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Animal</th>
+                <th>Adotante</th>
+                <th>Contato</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th id="thAcoesPedidos">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaPedidosBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="services.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
